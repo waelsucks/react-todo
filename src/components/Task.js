@@ -37,8 +37,8 @@ function Task({dataParam}) {
             width: "100%"
         }}
 
-        initial = {{opacity: 0, y: -2000}}
-        animate = {{opacity: 1, y: 0}}
+        initial = {{opacity: 0}}
+        animate = {{opacity: 1}}
         
         
         >

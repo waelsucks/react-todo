@@ -10,7 +10,7 @@ function App() {
             <header className="App-header">
 
                 <h1>
-                    What To-Do Tessa?
+                    What To-Do?
                 </h1>
 
                 <TaskManager></TaskManager>
