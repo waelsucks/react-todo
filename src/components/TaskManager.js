@@ -9,12 +9,12 @@ import { Button }   from "@mui/material";
 import AddIcon      from '@mui/icons-material/Add';
 import { Backdrop } from "@mui/material";
 
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon    from '@mui/icons-material/Close';
 
 
 function TaskManager() {
 
-    const [tasks, setTasks]         = useState([]);
+    const [tasks    , setTasks]     = useState([]);
     const [openModal, setOpenModal] = useState(false)
 
     const addTask = (data) => {
@@ -39,7 +39,7 @@ function TaskManager() {
         <div>
             <Button
             
-            variant="outlined"
+            variant="contained"
             disableElevation
             onClick={ () => {setOpenModal(true)} }
 
@@ -51,7 +51,7 @@ function TaskManager() {
 
             <Backdrop
             
-            open={openModal}
+            open = {openModal}
             
             >
 
