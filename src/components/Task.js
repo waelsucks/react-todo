@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 
-import { Checkbox, Paper } from '@mui/material'
+import { Checkbox, Paper, Button } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
 import { motion } from 'framer-motion'
+import DeleteIcon from '@mui/icons-material/Delete';
 
-function Task({dataParam}) {
+function Task({dataParam, handleRemove}) {
+
+    console.log("New task created! ID: ", dataParam.id)
 
     const [data, setData]           = useState(dataParam.task)
     const [className, setClassName] = useState('done')
@@ -15,7 +18,9 @@ function Task({dataParam}) {
 
         Paper: {
             width       : "100%",
-            textAlign   : "left"
+            textAlign   : "left",
+            display     : "grid",
+            gridTemplateColumns: "1fr 1fr"
         }
 
     })
@@ -47,15 +52,33 @@ function Task({dataParam}) {
             className = {classes.Paper}
 
             >
-                <Checkbox
-                
-                onChange = {handleChange} 
-                
-                ></Checkbox>
+                <div>
+                    <Checkbox
+                    
+                    onChange = {handleChange} 
+                    
+                    ></Checkbox>
 
-                <div className = {"task " + (checked && className)}>
-                    {data}
+                    <div className = {"task " + (checked && className)}>
+                        {data}
+                    </div>
                 </div>
+
+                <Button
+                    
+                    size        = "small"
+                    color       = "error"
+                    variant     = "contained"
+                    style       = {{justifySelf: "end", borderRadius: "0"}}
+                    startIcon   = {<DeleteIcon />}
+
+                    disableElevation
+
+                    onClick     = {handleRemove}
+
+                > REMOVE</Button>
+
+
 
             </Paper>
         </motion.div>

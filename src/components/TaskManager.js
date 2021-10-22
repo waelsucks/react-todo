@@ -14,6 +14,8 @@ import CloseIcon    from '@mui/icons-material/Close';
 
 function TaskManager() {
 
+    var id = 0;
+
     const [tasks    , setTasks]     = useState([]);
     const [openModal, setOpenModal] = useState(false)
 
@@ -22,11 +24,18 @@ function TaskManager() {
         const oldTasks = [...tasks];
 
         oldTasks.push({
-            task: data
+            task: data,
+            id: id
         });
 
         setTasks(oldTasks);
 
+        id += 1;
+
+    }
+
+    const removeTask = (data) => {
+        console.log(data);
     }
     
     useEffect(() => {
@@ -47,7 +56,7 @@ function TaskManager() {
             
             </Button>
 
-            <TaskDisplay activeTasks={tasks}></TaskDisplay>
+            <TaskDisplay activeTasks={tasks} removeTask = {removeTask}></TaskDisplay>
 
             <Backdrop
             

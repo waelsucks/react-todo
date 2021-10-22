@@ -1,8 +1,8 @@
 {
-  "homepage": "https://waelsucks.github.io/react-todo",
+  "homepage": "https://waelsucks.github.io/react-portfolio-v2",
   "name": "react-todo",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 import Task from './Task';
 
-function TaskDisplay({activeTasks}) {
+function TaskDisplay({activeTasks, removeTask}) {
 
     const [tasks, setTasks] = useState(activeTasks);
 
@@ -13,7 +13,7 @@ function TaskDisplay({activeTasks}) {
             {activeTasks.map( (task) => {
                 return(
 
-                    <Task dataParam = {task}></Task>
+                    <Task dataParam = {task} handleRemove = {removeTask}></Task>
 
                 )
             } )}
